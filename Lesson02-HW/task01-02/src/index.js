@@ -7,7 +7,6 @@ ReactDom.render(<App />,document.querySelector('#app'));
 
 
 /* Тестирование */
-// Импортирован только класс Developer
 const dev01 = new Developer('Вася',25,'23.04.1994','IT', 450000);
 const dev02 = new Developer('Коля',27,'24.05.1992','IT', 470000);
 
