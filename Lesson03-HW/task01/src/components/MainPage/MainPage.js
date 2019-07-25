@@ -3,7 +3,7 @@ import './MainPage.css';
 
 function MainPage(){    
     return (
-        <div id="MainPage" className="container border-10">
+        <div id="MainPage">
             <h3>MainPage</h3>
         </div>
     );

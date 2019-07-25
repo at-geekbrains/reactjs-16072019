@@ -10,10 +10,8 @@ import ModalPassword from '../ModalPassword/index';
 
 function Layout(){
     return (
-        <div className="container">            
-            <div>
-                <Menu/>
-            </div>            
+        <div>                        
+            <Menu/>                        
             <MainPage/>            
             <ModalPassword/>
         </div>
