@@ -7,7 +7,7 @@ import './Blog.css';
 function Blog(){
     return (
         <div>                        
-            test
+            Blog
         </div>
     );
 }

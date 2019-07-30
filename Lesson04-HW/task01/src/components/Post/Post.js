@@ -7,7 +7,7 @@ import './Post.css';
 function Post(){
     return (
         <div>                        
-            test
+            Post
         </div>
     );
 }
