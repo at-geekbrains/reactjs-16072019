@@ -32,7 +32,7 @@ export default class Layout extends React.Component {
             </div>
           </div>
         </div>
-        <footer className="card-footer text-light bg-dark">
+        <footer className="card-footer text-center">
           &copy; 2019
         </footer>
       </div>
