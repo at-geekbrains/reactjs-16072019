@@ -27,16 +27,5 @@ const Posts = [
         postAnotherLink:"Another Post 03 Link"
     }
 ];
-const posts = Posts.map((post,index) => {
-    return <Post {...post} key={index}/>
-}
 
-);
-function Blog(){
-    return (
-        <div>                                   
-            {posts}
-        </div>
-    );
-}
-export default Blog;
+export default () => (<div>{ Posts.map((post,index) => <Post {...post} key={index}/>) }</div>);
