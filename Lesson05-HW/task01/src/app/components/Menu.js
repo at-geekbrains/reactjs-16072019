@@ -6,7 +6,7 @@ export default class Menu extends Component {
   render() {
     return (
       <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <Link to="/" className="navbar-brand">
             {this.props.brand}
