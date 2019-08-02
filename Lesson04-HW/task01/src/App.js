@@ -23,10 +23,11 @@ class App extends Component {
   render() {
     return (
       <div>
+        {this.state.modal ? <WelcomeModal toggleModal={this.toggleModal} /> : null}
         <Container>
           <p className="text-center"><strong>Blogs</strong></p>          
           <Blog/>
-          {this.state.modal ? <WelcomeModal toggleModal={this.toggleModal} /> : null}                    
+                              
         </Container>
       </div>
     );

@@ -23,7 +23,8 @@ function WelcomeModal(props){
                         `
     return (
         // <Modal show={ show } onHide={ handleClose } >
-        <Modal.Dialog centered>                
+        //<Modal.Dialog className="modal-dialog-centered">
+        <Modal show = {toggleModal} onHide={ toggleModal } centered>
             <Modal.Header closeButton onHide={ toggleModal }>
                 <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
@@ -34,7 +35,7 @@ function WelcomeModal(props){
                 <Button variant="secondary" onClick={toggleModal/* handleClose */}>Close</Button>
                 <Button variant="primary" onClick={toggleModal/* handleClose */}>Save Changes</Button>
             </Modal.Footer>
-      </Modal.Dialog>     
+      </Modal>     
     );
 }
 export default WelcomeModal;
