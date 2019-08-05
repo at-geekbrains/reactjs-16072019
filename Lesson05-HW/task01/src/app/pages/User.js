@@ -19,7 +19,7 @@ export default class User extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://jsonplaceholder.typicode.com/users/${this.props.params.userId}`)
+    axios.get(`http://jsonplaceholder.typicode.com/users/${this.props.match.params.userId}`)
       .then(response => {
         this.setState({ user: response.data });
       })

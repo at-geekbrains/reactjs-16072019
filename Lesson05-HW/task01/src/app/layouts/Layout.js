@@ -4,8 +4,8 @@ import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import Main from '../pages/Main';
 import Users from '../pages/Users';
-//import User from '../pages/User';
-import User from '../components/User';
+import User from '../pages/User';
+//import User from '../components/User';
 
 
 export default class Layout extends React.Component {
