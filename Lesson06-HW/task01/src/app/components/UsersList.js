@@ -1,35 +1,37 @@
-import React, { Component } from 'react'
-import axios from 'axios';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import User from './User';
+import { getUsers } from '../store/users/usersActions';
 
-export default class UsersList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: []
-    }
-  }
-
+class UsersList extends Component {
   render() {
-    if (!this.state.users) {
+    if (!this.props.users) {
       return null;
     }
-
-    const users = this.state.users.map(user => {
-      return <User key={user.id} {...user} />
-    })
 
     return (
       <div>
         <h1>Пользователи</h1>
-        {users}
+        { this.props.users.map(user => { return <User key={user.id} {...user} /> }) }
       </div>
     )
   }
 
   componentDidMount() {
-    axios.get('http://jsonplaceholder.typicode.com/users/').then(response => {
-      this.setState({ users: response.data })
-    })
+    this.props.getUsers()
   }
 }
+function mapStateToProps(state) {
+  return {
+    users: state.usersState.users // смотри rootReducer.js
+
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    getUsers: () => dispatch(getUsers())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersList)
