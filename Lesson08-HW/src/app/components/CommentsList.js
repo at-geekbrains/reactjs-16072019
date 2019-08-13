@@ -3,18 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Comment from './Comment';
 
-
-
-
 const CommentsList = props => {
   const { comments } = props;
-  
-  useEffect(
-    axios.get('http://jsonplaceholder.typicode.com/comments/')
-    .then(response => {
-      this.setState({comments: response.data})
-    })  
-  )
   
   if (!comments.length) {
     return null;

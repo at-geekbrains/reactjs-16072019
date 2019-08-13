@@ -16,8 +16,7 @@ import Comment from "../pages/Comment";
 const isActive = href => window.location.pathname === href;
 const brand = 'React blog!';
 
-export default function Layout () {
-    return (
+const Layout = () => 
       <div>
         <Menu brand={brand}>
           <MenuItem href="/" active={isActive('/')}>
@@ -52,6 +51,6 @@ export default function Layout () {
         <footer className="card-footer">
           &copy; 2019
         </footer>
-      </div>
-    );
-}
+      </div>;
+
+export default Layout;

@@ -1,29 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import CommentProfile from '../components/Comment';
 
-export default class Comment extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                comment: null
-            };
-        }
+const Comment = props => {
+    const [stateComment, setStateComment] = useState({comment: null});
 
-        render() {
-            return ( 
-                <div>
-                    { this.state.comment && <CommentProfile { ...this.state.comment }/>}
-                </div>
-                );
-            }
+    useEffect(() => {        
+        axios.get('http://jsonplaceholder.typicode.com/comments/' + props.match.params.commentId)
+        .then(response => {setStateComment({comment: response.data})})
+    });
 
-            componentDidMount() {
-                axios.get('http://jsonplaceholder.typicode.com/comments/' + this.props.match.params.commentId)
-                    .then(response => {
-                        this.setState({
-                            comment: response.data
-                        })
-                    })
-            }
-        }
+    return ( 
+        <>
+            { stateComment.comment && <CommentProfile { ...stateComment.comment }/>}
+        </>
+    );
+}
+
+export default Comment;
